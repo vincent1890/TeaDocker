@@ -13,7 +13,7 @@ RUN	apt-get update && apt-get upgrade -qqy \
          ca-certificates wget curl python ffmpeg tzdata \
     \
     && mkdir -p /ts /ts/logs /ts/certs /ts/files /ts/database /ts/config /ts/crash_dumps \
-    && SERVER_VERSION=${SERVER_VERSION:-$(curl -s https://repo.teaspeak.de/server/linux/amd64_optimized//latest)} \
+    && SERVER_VERSION=${SERVER_VERSION:-$(curl -s https://repo.teaspeak.de/server/linux/amd64_optimized/latest)} \
     && wget -nv -O /ts/TeaSpeak.tar.gz \
         https://repo.teaspeak.de/server/linux/amd64_optimized/TeaSpeak-$SERVER_VERSION.tar.gz \
     && tar -xzf /ts/TeaSpeak.tar.gz -C /ts \
