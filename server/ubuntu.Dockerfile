@@ -13,9 +13,9 @@ RUN	apt-get update && apt-get upgrade -qqy \
          ca-certificates wget curl python ffmpeg tzdata \
     \
     && mkdir -p /ts /ts/logs /ts/certs /ts/files /ts/database /ts/config /ts/crash_dumps \
-    && SERVER_VERSION=${SERVER_VERSION:-$(curl -s https://repo.teaspeak.de/server/linux/amd64_optimized/TeaSpeak-1.4.18-beta-5.tar.gz)} \
+    && SERVER_VERSION=${SERVER_VERSION:-$(curl -s https://repo.teaspeak.de/server/linux/amd64_optimized//latest)} \
     && wget -nv -O /ts/TeaSpeak.tar.gz \
-        https://repo.teaspeak.de/server/linux/amd64_optimized/TeaSpeak-1.4.18-beta-5.tar.gz \
+        https://repo.teaspeak.de/server/linux/amd64_optimized/TeaSpeak-$SERVER_VERSION.tar.gz \
     && tar -xzf /ts/TeaSpeak.tar.gz -C /ts \
     && rm /ts/TeaSpeak.tar.gz \
     && echo "" > /ts/config/config.yml && ln -sf /ts/config/config.yml /ts/config.yml \
